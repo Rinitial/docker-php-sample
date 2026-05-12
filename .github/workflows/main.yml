@@ -12,7 +12,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKER_bagaskara }}
+          username: ${{ vars.DOCKER_RADIT }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -24,4 +24,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
-          tags: ${{ vars.DOCKER_bagaskara }}/${{ github.event.repository.name }}:latest
+          tags: ${{ vars.DOCKER_RADIT }}/${{ github.event.repository.name }}:latest
